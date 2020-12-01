@@ -1,0 +1,5 @@
+docker build -t img_myapp05 .
+
+docker run --rm -it -p 80:80 -v $(pwd):/var/www/html --name myapp05 img_myapp05
+
+docker run --rm -it -p 80:80 -v $(pwd):/var/www/html -e "TEST_VAR=John Doe" --name myapp05 img_myapp05

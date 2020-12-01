@@ -1,0 +1,4 @@
+#ignore below files
+.git
+docs
+run.txt

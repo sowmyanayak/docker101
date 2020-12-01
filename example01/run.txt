@@ -1,0 +1,13 @@
+docker build -t img_myapp01 .
+
+docker run --name myapp01 img_myapp01
+
+docker run --rm --name myapp01 img_myapp01
+
+/* to access webpage, expose the port */
+docker run --rm -p 80:80 --name myapp01 img_myapp01
+
+/* run in detached mode */
+docker run -d --rm -it -p 80:80 --name myapp01 img_myapp01
+
+docker stop myapp01
