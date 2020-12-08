@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  php:
+    build: ./php
+    ports:
+      - 80:80
+    environment: 
+      DB_HOST: db
+      DB_SCHEMA: example
+      DB_USER: php_svc
+      DB_PASSWORD: example
+    volumes:
+      - ./php:/var/www/html
+  db:
+    image: mariadb:10.4
+    environment: 
+      MYSQL_ROOT_PASSWORD: rootpwd
+      MYSQL_DATABASE: example
+      MYSQL_USER: php_svc
+      MYSQL_PASSWORD: example
+    volumes:
+      - ./db/setup.sql:/docker-entrypoint-initdb.d/setup_db.sql
+      - db_data:/var/lib/mysql
+volumes:
+  db_data: 

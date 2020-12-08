@@ -1,7 +1,7 @@
-docker build --build-arg PHP_VERSION=apache -t img_myapp02 .
-
+docker build -t img_myapp02 .
 docker run -d --rm -it -p 80:80 --name myapp02 img_myapp02
 docker exec myapp02 php --version
+docker exec myapp02 ls -al 
 docker stop myapp02
 
 /* change the build arg */

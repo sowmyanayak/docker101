@@ -1,3 +1,4 @@
+cd ../example04
 docker build -t img_myapp04 .
 
 /* mac, linux and powershell 

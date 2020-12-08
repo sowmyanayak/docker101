@@ -1,3 +1,4 @@
+cd ../example05
 docker build -t img_myapp05 .
 
 docker run --rm -it -p 80:80 -v $(pwd):/var/www/html --name myapp05 img_myapp05

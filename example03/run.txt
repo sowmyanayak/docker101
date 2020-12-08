@@ -1,6 +1,10 @@
+cd ../example03 
+
 docker build -t img_myapp03 .
 # build again, this time using cached layers it will be much faster
 
 docker run --rm -it -p 80:80 --name myapp03 img_myapp03
 
 /* add a new file in the directory - index2.php */
+
+/* demo making changes will require a rebuild each time */

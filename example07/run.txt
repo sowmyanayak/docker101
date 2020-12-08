@@ -1,0 +1,18 @@
+cd ../example07
+docker-compose up
+
+docker ps
+
+docker exec -it example07_db_1 bash
+mysql -uroot -prootpwd 
+show databases;
+use example;
+
+show tables;
+
+select * from users;
+
+update users set lname = 'Williams' where id =2 ;
+
+# don't use the volumes flag if you want to persist the database data
+docker-compose down -v
