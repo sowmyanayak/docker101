@@ -8,12 +8,13 @@
 echo "hello" > foo.txt
 
 docker run --rm -v $(pwd):/tmp/foo alpine cat /tmp/foo/foo.txt
+
 docker run --rm -e FOO=bar alpine printenv
 
 ## Prequisites
 Install Docker and Docker Compose
-Docker commands to run before hand
 
+Docker commands to run before hand: 
 	docker pull php:apache
 	docker pull php:8.0.0RC2-apache
 	docker pull mariadb:10.4
