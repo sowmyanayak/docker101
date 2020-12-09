@@ -1,0 +1,6 @@
+cd ../example08
+docker-compose up -d
+
+docker exec example08_php_1 cat /run/secrets/db_password
+
+docker-compose down -v

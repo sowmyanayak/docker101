@@ -15,6 +15,7 @@ docker run --rm -e FOO=bar alpine printenv
 Install Docker and Docker Compose
 
 Docker commands to run before hand: 
+
 	docker pull php:apache
 	docker pull php:8.0.0RC2-apache
 	docker pull mariadb:10.4
@@ -48,14 +49,10 @@ Big picture: application stack
 
 ## example07: persist db volume, initialize db data
 
-# TODO ******
-## example08 - use docker secret for db pwd + config???
+## example08: docker secret
 	store db pwd as secret
 
-	TODO: 
-	php config file - datasource or 
-	apache configuration response header
-
+# TODO ******
 ## example09 - mailcatcher container
 	contact us page sending out email
 	subnets - web + mail, web + db
