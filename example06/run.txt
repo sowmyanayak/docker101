@@ -54,3 +54,5 @@ VALUES
 select * from users;
 
 docker-compose down
+
+docker-compose rm
