@@ -16,6 +16,33 @@ CREATE TABLE users (
   PRIMARY KEY (id)
 );
 
+#### JJ
+
+docker exec -it example06_db_1 mysql -uroot -prootpwd -e "
+  show databases;
+  use example;
+
+  CREATE TABLE users (
+    id INT NOT NULL AUTO_INCREMENT,
+    fname VARCHAR(45) NULL,
+    lname VARCHAR(45) NULL,
+    email VARCHAR(45) NULL,
+    PRIMARY KEY (id)
+  );
+
+  INSERT INTO users (fname, lname, email)
+  VALUES
+  ('John', 'Doe', 'jdoe@example.com'),
+  ('Matt', 'Smith', 'msmith@example.com')
+  ;
+"
+
+-------------
+
+docker exec -it example06_db_1 mysql -uroot -prootpwd
+
+####
+
 show tables;
 
 INSERT INTO users (fname, lname, email)
@@ -27,3 +54,5 @@ VALUES
 select * from users;
 
 docker-compose down
+
+docker-compose rm
