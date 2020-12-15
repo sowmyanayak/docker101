@@ -1,4 +1,4 @@
-ARG PHP_VERSION=apache
+ARG PHP_VERSION=7.4.13-apache
 FROM php:${PHP_VERSION}
 
 COPY . /var/www/html

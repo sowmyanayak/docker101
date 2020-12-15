@@ -1,6 +1,7 @@
-#ignore below files
+#ignore below files (this is blacklisting)
+# more common approach is to to whiltelist just the files that are needed
+.dockerignore
 .git
 docs
-run.txt
 Dockerfile
-.dockerignore
+Readme.md

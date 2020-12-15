@@ -5,17 +5,6 @@ services:
     ports:
       - 80:80
     environment: 
-      DB_HOST: db
-      DB_SCHEMA: example
-      DB_USER: php_svc
-      DB_PASSWORD: example
+      TEST_VAR: John Doe
     volumes:
       - ./php:/var/www/html
-  db:
-    image: mariadb:10.4
-    environment: 
-      MYSQL_ROOT_PASSWORD: rootpwd
-      MYSQL_DATABASE: example
-      MYSQL_USER: php_svc
-      MYSQL_PASSWORD: example
-

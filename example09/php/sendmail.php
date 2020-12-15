@@ -1,9 +1,8 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
-require 'vendor/autoload.php';
+require '/usr/lib/vendor/autoload.php';
 $mail = new PHPMailer;
 $mail->isSMTP();
-$mail->SMTPDebug = 2;
 $mail->Host = 'mail';
 $mail->Port = 25;
 $mail->setFrom('info@dockerworkshop.com', 'Docker Workshop');
