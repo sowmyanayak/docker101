@@ -1,8 +1,7 @@
 <?php
 $hostname = $_ENV["DB_HOST"];
 $username = $_ENV["DB_USER"];
-$password = rtrim(file_get_contents("/run/secrets/db_password"));
-
+$password = $_ENV["DB_PASSWORD"];
 $db = $_ENV["DB_SCHEMA"];
 
 $dbconnect=new mysqli($hostname,$username,$password,$db);

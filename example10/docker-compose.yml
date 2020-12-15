@@ -1,0 +1,45 @@
+version: "3.8"
+services:
+  php:
+    build: ./php
+    ports:
+      - 80:80
+    environment: 
+      DB_HOST: db
+      DB_SCHEMA: example
+      DB_USER: php_svc
+    volumes:
+      - ./php:/var/www/html
+    secrets: 
+      - db_password
+    networks:
+      - php_db
+      - php_mail
+  db:
+    image: mariadb:10.4
+    environment: 
+      MYSQL_ROOT_PASSWORD: rootpwd
+      MYSQL_DATABASE: example
+      MYSQL_USER: php_svc
+      MYSQL_PASSWORD_FILE: /run/secrets/db_password
+    volumes:
+      - ./db/setup.sql:/docker-entrypoint-initdb.d/setup_db.sql
+      - db_data:/var/lib/mysql
+    secrets: 
+      - db_password
+    networks:
+      - php_db
+  mail:
+    image: helder/mailcatcher
+    ports:
+      - 81:80
+    networks:
+      - php_mail
+volumes:
+  db_data: 
+secrets: 
+  db_password:
+    file: ./db/db_password.txt
+networks:
+  php_db:
+  php_mail: 

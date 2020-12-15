@@ -18,8 +18,4 @@ services:
       MYSQL_DATABASE: example
       MYSQL_USER: php_svc
       MYSQL_PASSWORD: example
-    volumes:
-      - ./db/setup.sql:/docker-entrypoint-initdb.d/setup_db.sql
-      - db_data:/var/lib/mysql
-volumes:
-  db_data: 
+

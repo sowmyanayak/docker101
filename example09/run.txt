@@ -1,4 +1,0 @@
-cd ../example09
-docker-compose up -d
-
-docker-compose down -v

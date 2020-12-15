@@ -24,11 +24,6 @@ services:
       - db_data:/var/lib/mysql
     secrets: 
       - db_password
-  mail:
-    image: helder/mailcatcher
-    container_name: mail
-    ports:
-      - 81:80
 volumes:
   db_data: 
 secrets: 
