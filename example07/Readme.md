@@ -17,7 +17,7 @@ docker ps
 ```
 Make a request to the site - http://localhost. The env vars are shown. The database has an empty schema. Let's create a table with some data. 
 ```
-docker exec -it example07_db_1 mysql -uroot -prootpwd -e "
+docker exec example07_db_1 mysql -uroot -prootpwd -e "
   use example;
 
   CREATE TABLE users (
